@@ -1,7 +1,7 @@
 #Pacman in Python with PyGame
-#https://github.com/hbokmann/Pacman
+#Adapted by Caitlin Ross from https://github.com/hbokmann/Pacman
   
-import pygame._view
+import pygame
   
 black = (0,0,0)
 white = (255,255,255)
@@ -9,17 +9,17 @@ blue = (0,0,255)
 green = (0,255,0)
 red = (255,0,0)
 purple = (255,0,255)
-yellow   = ( 255, 255,   0)
+yellow = (255,255,0)
 
-Trollicon=pygame.image.load('images/Trollman.png')
-pygame.display.set_icon(Trollicon)
+pacman_img=pygame.image.load('images/pacman.png')
+pygame.display.set_icon(pacman_img)
 
 #Add music
 pygame.mixer.init()
 pygame.mixer.music.load('pacman.mp3')
 pygame.mixer.music.play(-1, 0.0)
 
-# This class represents the bar at the bottom that the player controls
+# This class represents the walls of the room
 class Wall(pygame.sprite.Sprite):
     # Constructor function
     def __init__(self,x,y,width,height, color):
